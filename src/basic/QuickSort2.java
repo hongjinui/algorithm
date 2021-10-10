@@ -10,39 +10,33 @@ public class QuickSort2 {
             System.out.println(n);
         }
     }
-
-    public static void quickSort(int[] arr, int start, int end) {
-
-        System.out.println("quickSort start");
+    public static void quickSort(int[] arr,int start,int end){
         if(start >= end) return;
 
-//        StringBuilder sb = new StringBuilder();
+        int partition = partition(arr, start, end);
 
-//        int pivot = start;
-        int left = start+1;
-        int right = end;
-        int temp;
+        quickSort(arr, start, partition-1);
+        quickSort(arr, partition, end);
+    }
 
-        while(left <= right){
-            while(arr[start] >= arr[left] && left < end){
-                left++;
+    public static int partition(int[] arr, int start, int end) {
+        int pivot = arr[(start+end)/2];
+        while(start <= end){
+            while(arr[start] < pivot) start++;
+            while(arr[end] > pivot) end--;
+            if(start <= end){
+                swap(arr, start,end);
+                start++;
+                end--;
             }
-            while(arr[start] <= arr[right] && right > start){
-                right--;
-            }
-            if(left >= right){
-                temp = arr[right];
-                arr[right] = arr[start];
-                arr[start] = temp;
-            }else{
-                temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-            }
-
         }
+        return start;
+    }
 
-        quickSort(arr, start, right-1);
-        quickSort(arr, right+1, end);
+    public static void swap(int[] arr, int start, int end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
     }
 }

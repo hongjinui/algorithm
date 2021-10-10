@@ -1,6 +1,6 @@
 package baekjoon.greedy;
 
-import java.util.Scanner;
+import java.io.*;
 
 /*
 *   -----------------------------------------------------------------------------------
@@ -8,11 +8,41 @@ import java.util.Scanner;
 *   정답 비율 : 78%
 *   -----------------------------------------------------------------------------------
  */
-// 세탁소 거스름 문제
+
 public class Q2070 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int testCase = Integer.parseInt(br.readLine());
+        int temp;
+
+        for(int i=0;i<testCase;i++){
+
+            int quarter, dime, nickel, penny;
+            temp = Integer.parseInt(br.readLine());
+
+            quarter = temp/25;
+            temp = temp%25;
+
+            dime = temp/10;
+            temp = temp%10;
+
+            nickel = temp/5;
+            temp = temp%5;
+
+            penny = temp;
+
+            bw.write(quarter + " " + dime + " " + nickel + " " + penny );
+            bw.newLine();
+        }
+
+        bw.flush();
+        bw.close();
+
+        /*
         Scanner scanner = new Scanner(System.in);
 
         int testCase = scanner.nextInt();
@@ -36,6 +66,6 @@ public class Q2070 {
             arr[i] = arr[i];
 
             System.out.println(quarter + " " + dime + " " + nickel + " " + penny);
-        }
+        }*/
     }
 }
