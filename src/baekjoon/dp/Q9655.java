@@ -8,36 +8,33 @@ import java.util.StringTokenizer;
 
 /*
  *   -----------------------------------------------------------------------------------
- *   문제 제목 : 돌 게임 2
- *   정답 비율 : 79%
- *   출    처 : https://www.acmicpc.net/problem/9656
+ *   문제 제목 : 돌 게임
+ *   정답 비율 : 76%
+ *   출    처 : https://www.acmicpc.net/problem/9655
  *   -----------------------------------------------------------------------------------
  */
-public class Q9656 {
+public class Q9655 {
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
-        boolean[] arr = new boolean[1001];
+//        boolean[] arr = new boolean[n+1];
+
+        // true는 상근 승, false는 창영승
+//        arr[1] = true;
+//        arr[2] = false;
+//        arr[3] = true;
+//        arr[4] = false;
+
+        if(n%2==0) System.out.println("CY");
+        else System.out.println("SK");
 
 
-        // 돌이 1개 일 때 상근의 패 -CY
-        // 돌이 2개 일 때 상근의 승 - SK
-        // 돌이 3개 일 때 상근의 패 - CY
-        arr[1] = false;
-        arr[2] = true;
-        arr[3] = false;
-
-        for(int i=4;i<=n;i++){
-            if( !arr[i-1] || !arr[i-3]) arr[i] = true;
-            else arr[i] = false;
-        }
-
-        if(arr[n]) System.out.print("SK");
-        else System.out.print("CY");
 
     }
+
 }
