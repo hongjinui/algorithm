@@ -5,6 +5,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/*
+ *   -----------------------------------------------------------------------------------
+ *   문제 제목 : 로또의 최고 순위와 최저 순위
+ *   출    처 : https://programmers.co.kr/learn/courses/30/lessons/77484
+ *   문제 유형 : 경우의 수 구하는 유형 해시문제인가?
+ *   -----------------------------------------------------------------------------------
+ */
 public class LottoMaxMin {
 
 
