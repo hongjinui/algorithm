@@ -1,4 +1,4 @@
-package programmers.hash;
+package programmers.level1;
 
 import java.util.Arrays;
 
